@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* box-shadow */
+        .box1 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            box-shadow: 0 0 30px (rgba0, 0, 0, 0, 0.5);
+            margin-bottom: 50px;
+        }
+
+        .box1 img {
+            width: 100%;
+        }
+
+        /* drop-shadow */
+        .box2 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            filter:
+                drop-shadow(0 0 30px rgba(159, 46, 211, 0.5)) drop-shadow(0 0 30px rgba(255, 255, 0, 0.5));
+            /* 明暗度 */
+            /* brightness(1) */
+        }
+
+        .box2 img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"><img src="../20220928/pica.png" alt=""></div>
+    <div class="box2"><img src="../20220928/pica.png" alt=""></div>
+</body>
+
+</html>

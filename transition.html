@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        hr {
+            margin: 100px;
+        }
+
+        .hover {
+            width: 100px;
+            height: 100px;
+            color: #fff;
+            background: #000;
+            text-align: center;
+            line-height: 100px;
+            position: absolute;
+            left: 0;
+            font-size: 2rem;
+            /* 設定轉場屬性,預設all,也可以設定none,也可以依據屬性設定 */
+            /* transition-property: background-color,width,font-size */
+            transition-property: all;
+
+            /* 持續時間,預設為0 */
+            transition-duration: 1s;
+            /* 轉場速率 */
+            /* 轉場速率參考網站:https://easings.net/ */
+            /* ease =>預設值
+             linear =>線性,維持等速
+            ease-in =>由慢變快
+            ease-out =>由快變慢
+            ease-in-out =>由慢變快,由快變慢*/
+            /* transition-timing-function: ease; */
+            /* transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1); */
+
+            /* 延遲時間: 預設為0*/
+            transition-delay: 0.1s;
+
+            /* 縮寫 */
+            transition: width 0.5s ease-in, background-color 3s ease-in-out;
+
+            /* 針對所有屬性做轉場,並將duration設定1秒鐘 */
+            transition: 1s;
+        }
+
+        .hover:hover {
+            background-color: dodgerblue;
+            width: 100vw;
+            font-size: 4rem;
+        }
+
+        /* 也可以針對子元素設定轉場 */
+        .hover span {
+            transition: 1s;
+        }
+
+        .hover:hover span {
+            margin-left: 320px;
+            color: rgb(255, 224, 251);
+        }
+
+        .link {
+            width: 150px;
+            height: 50px;
+            background: lightskyblue;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            left: 20%;
+            top: center;
+            color: rgb(33, 43, 83);
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            font-family: '微軟正黑體';
+            font-size: 20px;
+            font-weight: bolder;
+            transition: 1s;
+        }
+
+        lable[for="ckecked-me"] {
+            background: dodgerblue;
+            color: #fff;
+            padding: .5rem, .75rem;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .link:hover {
+            /* 相較於直接設定weight , height,用transform:scale設定可直接從中間縮放,且連同字體大小,行高,可以少設定很多東西 */
+            transform: scale(1.2);
+            background-color: rgb(33, 33, 70);
+            color: aliceblue;
+
+        }
+
+        .sidebar {
+            width: 300px;
+            color: #fff;
+            background: #aaa;
+            padding: 1rem;
+            margin-left: -500px;
+            transition: 1s;
+        }
+
+        #checked-me:checked+.sidebar {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>轉場</h1>
+    <ul>
+        <li>轉場是有兩組樣式之間漸進式的轉換過程，起始樣式與結束樣式，瀏覽器會將兩組樣式形成補間動畫(tween)</li>
+        <li>必須要有狀態觸發動作(狀態有很多種)，最常見的是hover 或是media query 媒體查詢尺寸的改變也可以造成轉場</li>
+    </ul>
+
+    <h1>hover狀態</h1>
+    <div class="hover">
+        <span>test</span>
+        <span>hover</span>
+    </div>
+
+    <h2>練習:試做一個按鈕,滑鼠hover時,背景顏色,文字顏色.按鈕放大的轉場效果</h2>
+    <a href="#" class="link">按鈕連結</a>
+
+    <hr>
+
+    <h1>checked狀態</h1>
+    <p>:checked狀態改變,transition產生</p>
+    <label for="checked-me">CheckMe</label>
+    <input id="checked-me" type="checkbox">
+    <div class="sidebar">
+        工程我只以為殺手抱著程式處罰幾次引進西安廣場不詳好激動，元素不然測試供求，涉及神經大賽經常體制來說，裝飾情況問道結構遠程我想前進德國讀書導演上網，新人正在類別例如誘惑對不起，筆記本傳說系列含有較大配件投訴維持熟悉魅力有些，發達費用失去，本人大連，補充萬元。
+    </div>
+</body>
+
+</html>
